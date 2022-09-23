@@ -18,7 +18,7 @@ on:
     # The branches below must be a subset of the branches above
     branches: [ "BABEL_2_X_DEV" ]
   schedule:
-    - cron: '36 18 * * 5'
+    - cron: '22 19 * * 5'
 
 jobs:
   analyze:
@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'cpp', 'csharp', 'java', 'python', 'ruby' ]
+        language: [ 'cpp' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
@@ -61,7 +61,7 @@ jobs:
     #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
 
     - run: |
-        cd ../babelfishpg_common
+        cd babelfishpg_common
         make clean && make
 
     - name: Perform CodeQL Analysis
